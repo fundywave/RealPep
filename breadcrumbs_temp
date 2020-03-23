@@ -1,0 +1,17 @@
+<?php if($conf['breadcrumbs']) { ?>
+      <div class="breadcrumbs">
+      <?php tpl_breadcrumbs(); ?>
+      </div>
+      <?php }?>
+    
+    <?php if($conf['youarehere']) { ?>
+      <div class="breadcrumbs">
+      <?php tpl_youarehere(); ?>
+      </div>
+      <?php }?>
+
+    <?php if(tpl_getConf('rb_youarehere')) { ?>
+      <div class="breadcrumbs">
+      <?php rb_youarehere(); ?>
+      </div>
+      <?php }?>

@@ -1,0 +1,87 @@
+<nav id="menu-wrap">
+    <ul id="menu">
+        <?php
+            $xml=simplexml_load_file(dirname(__FILE__).'/files/menus.xml') or die("Error: Cannot open menus.xml file");
+            
+            function MenuCreator( $xml ) 
+            {
+                 
+                foreach($xml->children() as $sublink) 
+                {
+                    $name=$sublink["name"];
+                    $url=$sublink["url"];
+                    $sublinkCount=$sublink->count();
+                    echo "<li>";
+                        if($sublinkCount>0)
+                            echo "<a href=$url>$name&#9662</a>";
+                        else
+                            echo "<a href=$url>$name</a>";
+                    if($sublinkCount)
+                    {
+                        echo "<ul>";
+                        MenuCreator($sublink);
+                        echo "</li>";
+                        echo "</ul>";
+                    }
+                }
+            }
+            MenuCreator($xml);
+
+                  $user = rb_get_user_info();
+                  $perms = auth_quickaclcheck('home');
+                  echo "<ul>";
+                  foreach (tpl_getConf('rb_actions') as $command) 
+                    {
+                        $url=GetLink($command);
+                      
+                        if($url==false || is_null($url)) continue;
+                        
+                        $caption=GetCaption($command);
+                
+                            echo "<li>";
+                        echo "<a href=$url>$caption</a>";
+                         
+                         echo "</li>";
+
+                    }
+                    echo "</ul>";
+            function GetCaption($type)
+            {
+                global $lang;   
+                $data = tpl_get_action($type);
+                extract($data);
+                if(strpos($id, '#') !== 0) 
+                {
+                    $caption = $lang['btn_'.$type];
+                }
+                    return $caption;    
+            }
+            function GetLink($type) 
+            {
+
+                $data = tpl_get_action($type);
+                if($data === false) 
+                {
+                    return false;
+                } elseif(!is_array($data)) 
+                {
+                    $out = sprintf($data, 'link');
+                } 
+                else 
+                {
+
+                    extract($data);
+                    if(strpos($id, '#') === 0) 
+                    {
+                        $linktarget = $id;
+                    } else 
+                    {
+                        $linktarget = wl($id, $params);
+                    }
+                }
+                
+                return $linktarget;
+            }
+        ?>
+    </ul>
+</nav>

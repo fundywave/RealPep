@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<links>
+	<sublink name="Home" cat="main" url="?id=home" status="active">
+	</sublink>
+	<sublink name="News" cat="main" url="?id=news" status="active">
+		<sublink name="Upcoming events" cat="sub" url="?id=upcomingevents" status="active">
+		</sublink>
+		<sublink name="Past events" cat="sub" url="?id=pastevents" status="active">
+		</sublink>
+		<sublink name="Organized sessions" cat="sub" url="?id=organizedsessions" status="active">
+		</sublink>
+	</sublink>
+	<sublink name="Research Group" cat="main" url="#" status="active">
+		<sublink name="Coordination" cat="sub" url="?id=coordinator" status="active">
+		</sublink>
+		<sublink name="Additional initiator" cat="sub" url="?id=addinitiator" status="deactive">
+		</sublink>
+		<sublink name="Researchers" cat="sub" url="?id=researchers" status="active">
+		</sublink>
+	</sublink>
+	<sublink name="Projects" cat="main" url="?id=projects" status="deactive">
+		<sublink name="P1" cat="sub" url="#" status="deactive">
+			<sublink name="Current status" cat="sub" url="?id=project_p1_status" status="deactive">
+			</sublink>
+		</sublink>
+		<sublink name="P2" cat="sub" url="#" status="deactive">
+			<sublink name="Current status" cat="sub" url="?id=project_p2_status" status="deactive">
+			</sublink>
+		</sublink>
+		<sublink name="P3" cat="sub" url="#" status="deactive">
+			<sublink name="Current status" cat="sub" url="?id=project_p3_status" status="deactive">
+			</sublink>
+		</sublink>
+		<sublink name="P4" cat="sub" url="#" status="deactive">
+			<sublink name="Current status" cat="sub" url="?id=project_p4_status" status="deactive">
+			</sublink>
+		</sublink>
+		<sublink name="C1" cat="sub" url="#" status="deactive">
+			<sublink name="Current status" cat="sub" url="?id=project_c1_status" status="deactive">
+			</sublink>
+		</sublink>
+	</sublink>
+	<sublink name="Publications" cat="main" url="?id=publications" status="active">
+	</sublink>
+	<sublink name="Conferences" cat="main" url="?id=conventions" status="active">
+	</sublink>
+	<sublink name="Events" cat="main" url="#" status="active">
+		<sublink name="Excursions" cat="sub" url="?id=excursions" status="active">
+		</sublink>
+	</sublink>
+	<sublink name="Internal Contents" cat="main" url="#" status="active">
+		<sublink name="RealPep meetings" cat="sub" url="?id=kickoff" status="active">
+		</sublink>
+	</sublink>
+	<sublink name="Management" cat="main" url="#" status="active">
+	</sublink>
+</links>

@@ -1,0 +1,49 @@
+  <!-- start sidebar -->
+  <div id="sidebar">
+
+        <?php 
+          if (tpl_getConf('rb_private') && !$_SERVER['REMOTE_USER']) 
+            {}
+          else { 
+        ?>
+          <?php if (tpl_getConf('rb_sitenav')) { ?>
+            <!-- start site navigation box -->
+            <div id="sitenav">
+              <div id="sitenav_title">
+                <?php ptln(hsc($lang['sitenav_title']))?>
+              </div>
+              <div id="sitenav_content">
+                <?php tpl_sidebar_content()?>
+                <?php //if (tpl_getConf('rb_showeditbtn')) tpl_sidebar_editbtn()?>
+              </div>
+            </div>
+            <!-- end site navigation box -->
+          <?php } ?>
+        
+          
+            <!-- start site commands box -->
+            <div id="sitecmd">
+              <div id="sitecmd_title">
+                <?php ptln(hsc($lang['sitecmd_title']))?>
+              </div>
+              <div id="sitecmd_content">
+                <?php rb_sitecmds($perms, $user) ?>
+              </div>
+            </div>
+            <!-- end site commands box -->
+          <?php } ?>
+          
+
+          
+          <!-- start user info -->
+          <div class="user">
+            <?php tpl_userinfo() ?>
+          </div>
+          <!-- end user info -->
+          
+          
+          <!-- start footer -->
+          <?php @include(dirname(__FILE__).'/footer.html')?>
+          <!-- end footer -->
+
+  </div>
